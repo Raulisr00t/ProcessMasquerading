@@ -67,12 +67,13 @@ if (VirtualProtect(procParams->CommandLine.Buffer, len + sizeof(WCHAR), PAGE_REA
 int main(void){
     SetCurrentDirectoryW(L"C:\\Windows\\System32");
 
-    if (MasqueradeProcess()) {
+    if (MasqueradeProcess()) 
         printf("[+] Masquerading successful!\n");
-    }
+    
 
     else {
         printf("[-] Masquerading failed.\n");
+        return -1;
     }
 
     printf("[>>] Press Enter To Continue\n");
